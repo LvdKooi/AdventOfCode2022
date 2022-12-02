@@ -1,7 +1,8 @@
+day = "day1"
 elfMap = {}
 
 # part 1
-with open("./day1/puzzle-input-day1.txt", "r") as file:
+with open(f"./puzzle-input-{day}.txt", "r") as file:
     current_elf = 1
     current_sum = 0
 
