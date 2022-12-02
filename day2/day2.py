@@ -35,17 +35,16 @@ def determine_own_action(encoded_result, opponents_action):
         return action_wins_from_map[opponents_action]
 
     if decoded_outcomes_map[encoded_result] == 'DRAW':
-        return opponent_action
+        return opponents_action
 
     if decoded_outcomes_map[encoded_result] == 'WIN':
         return action_loses_from_map[opponents_action]
 
 
-# part 1
-with open(f"./puzzle-input-{day}.txt", "r") as file:
+def part_one(lines):
     score_sum = 0
 
-    for line in file.readlines():
+    for line in lines:
         round_actions = line.strip().split(' ')
 
         opponent_action = get_action(round_actions[opponent_index])
@@ -53,13 +52,13 @@ with open(f"./puzzle-input-{day}.txt", "r") as file:
 
         score_sum += calculate_score(opponent_action, own_action)
 
-print(f'Result of part 1: {score_sum}')
+    print(f'Result of part 1: {score_sum}')
 
-# part 2
-with open(f"./puzzle-input-{day}.txt", "r") as file:
+
+def part_two(lines):
     score_sum = 0
 
-    for line in file.readlines():
+    for line in lines:
         round_actions = line.strip().split(' ')
 
         result = round_actions[self_index]
@@ -69,4 +68,10 @@ with open(f"./puzzle-input-{day}.txt", "r") as file:
 
         score_sum += calculate_score(opponent_action, own_action)
 
-print(f'Result of part 2: {score_sum}')
+    print(f'Result of part 2: {score_sum}')
+
+
+with open(f"./puzzle-input-{day}.txt", "r") as file:
+    lines = file.readlines()
+    part_one(lines)
+    part_two(lines)
