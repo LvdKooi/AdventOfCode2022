@@ -38,11 +38,8 @@ def part_two(lines):
 
     for line in lines:
         pairs = line.strip().split(',')
-        first_pair = pairs[0]
-        second_pair = pairs[1]
-
-        first_range_as_list = pair_as_range(first_pair)
-        second_range_as_list = pair_as_range(second_pair)
+        first_range_as_list = pair_as_range(pairs[0])
+        second_range_as_list = pair_as_range(pairs[1])
 
         for i in first_range_as_list:
             if i in second_range_as_list:
