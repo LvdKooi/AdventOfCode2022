@@ -8,18 +8,17 @@ def part_one_and_two(line, number_of_unique_characters, log_statement):
         character_list.append(character)
 
         if len(character_list) == number_of_unique_characters:
-            count_map = {}
+            counts = []
             for item in character_list:
-                count_map[item] = character_list.count(item)
+                counts.append(character_list.count(item))
 
-            number_of_double_occurences = len(list(filter(lambda number: number > 1, count_map.values())))
+            number_of_double_occurences = len(list(filter(lambda number: number > 1, counts)))
 
             if number_of_double_occurences == 0:
                 print(f'{log_statement}{i + 1}')
                 break
 
             character_list.pop(0)
-            continue
 
 
 with open(f"./puzzle-input-{day}.txt", "r") as file:
