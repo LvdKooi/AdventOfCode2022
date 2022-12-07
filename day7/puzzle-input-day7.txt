@@ -23,6 +23,7 @@ $ cd lwzcss
 $ ls
 dir bttplh
 $ cd bttplh
+$ cd bttplh
 $ ls
 dir rzj
 $ cd rzj
